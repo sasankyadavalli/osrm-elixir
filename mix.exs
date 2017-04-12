@@ -3,7 +3,7 @@ defmodule OSRM.Mixfile do
 
   def project do
     [app: :osrm,
-     version: "0.0.1",
+     version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -43,7 +43,9 @@ defmodule OSRM.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [# Local dependencies
+    [{:httpoison, "~> 0.11"},
+     {:poison, "~> 3.0"},
+     # Local dependencies
      {:credo, "~> 0.6", only: [:dev, :test ]},
      {:ex_doc, "~> 0.15", only: [:dev, :test]},]
   end
